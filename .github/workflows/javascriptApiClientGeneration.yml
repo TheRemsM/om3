@@ -23,8 +23,8 @@ jobs:
           sparse-checkout: |
             .git
           sparse-checkout-cone-mode: false
-      - run: ls
       - run: | 
+          cp testOpenApiGen/* testOpenApiGen/
           cd testOpenApiGen
           ls -a
 
