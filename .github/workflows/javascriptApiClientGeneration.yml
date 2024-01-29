@@ -15,5 +15,5 @@ jobs:
         with:
           generator: javascript
           openapi-url: https://raw.githubusercontent.com/opensvc/om3/main/daemon/api/api.yaml
-
+      - run: ls
 
