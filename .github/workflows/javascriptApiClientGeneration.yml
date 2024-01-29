@@ -30,5 +30,7 @@ jobs:
          git checkout -b feature-branch
          git commit -a -m "msg"
          git push origin feature-branch
+         git config --global user.email "you@example.com"
+         git config --global user.name "Your Name"
          gh pr create --title "some title" --body "some body" --head "feature-branch" --base main
 
