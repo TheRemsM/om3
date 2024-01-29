@@ -1,0 +1,20 @@
+name: javascript API client generation using api.yaml
+
+on:
+  push:
+    paths:
+      - daemon/api/api.yaml
+
+jobs:
+  generate-javascript-client:
+    runs-on: ubuntu-latest
+    name: generate javascript client
+  steps:
+
+    - name: Generate Javascript Client
+      uses: openapi-generators/openapitools-generator-action@v1.5.0
+      with:
+        generator: javascript
+        openapi-url: https://raw.githubusercontent.com/opensvc/om3/main/daemon/api/api.yaml
+
+
