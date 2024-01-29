@@ -15,5 +15,15 @@ jobs:
         with:
           generator: javascript
           openapi-url: https://raw.githubusercontent.com/opensvc/om3/main/daemon/api/api.yaml
+
+      - uses: actions/checkout@v4
+        with:
+          repository: remimendes/testOpenApiGen
+          path: testOpenApiGen
+          sparse-checkout: |
+            .git
+          sparse-checkout-cone-mode: false
       - run: ls
+      - run: cd testOpenApiGen
+      - run: ls -a
 
