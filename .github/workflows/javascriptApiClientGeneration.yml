@@ -23,8 +23,12 @@ jobs:
           sparse-checkout: |
             .git
           sparse-checkout-cone-mode: false
+
       - run: | 
-          cp -r javascript-client/* testOpenApiGen/
-          cd testOpenApiGen
-          ls -a
+         cp -r javascript-client/* testOpenApiGen/
+         cd testOpenApiGen
+         git checkout -b feature-branch
+         git commit -a -m "msg"
+         git push origin feature-branch
+         gh pr create --title "some title" --body "some body" --head "feature-branch" --base main
 
