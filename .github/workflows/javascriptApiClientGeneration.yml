@@ -33,10 +33,12 @@ jobs:
          git config --global user.name "Your Name"
          git checkout -b feature-branch
          git add .
-         if [ -n $(git status -s) ]; then
+         if [ -n "$(git status -s)" ]; then
           exit 0
          fi
          git status
+         cat javascript-client/package.json 
+         cat javascript-client/package.json | jq
          git commit -m "msg"
          git push origin feature-branch --force
          echo "${{ secrets.ACCESS_TOKEN }}" > token.txt
