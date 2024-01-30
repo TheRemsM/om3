@@ -4,7 +4,7 @@ openapi: 3.0.0
 
 info:
   title: opensvc agent api
-  version: 3.12.2
+  version: 3.12.3
 
 paths:
   /auth/token:
@@ -12,7 +12,7 @@ paths:
       description: |
         Create and return a JSON Web Token the client can use as a Authorization
         header in its following requests.
-        The requested roles are embedded as a 'grant' claim if matching the usr rem
+        The requested roles are embedded as a 'grant' claim if matching the usr r
         'grant' keyword.
       operationId: PostAuthToken
       parameters:
