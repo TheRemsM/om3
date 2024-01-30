@@ -25,7 +25,7 @@ jobs:
         #  sparse-checkout-cone-mode: false
 
       - run: |
-         git clone "https://remimendes:${{ secrets.ACCESS_TOKEN }}@github.com/testOpenApiGen.git"
+         git clone --bare https://${{ secrets.ACCESS_TOKEN }}@github.com/remimendes/testOpenApiGen.git testOpenApiGen
          cp -r javascript-client/* testOpenApiGen/
          cd testOpenApiGen
          git config --global user.email "you@example.com"
