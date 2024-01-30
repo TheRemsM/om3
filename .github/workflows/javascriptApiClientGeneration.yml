@@ -26,7 +26,8 @@ jobs:
 
       - run: |
          git clone --no-checkout https://${{ secrets.ACCESS_TOKEN }}@github.com/remimendes/testOpenApiGen.git
-         cp -a javascript-client/* testOpenApiGen/
+         cp -r javascript-client/* testOpenApiGen/
+         cp -r javascript-client/.* testOpenApiGen/
          cd testOpenApiGen
          ls -a
          git config --global user.email "you@example.com"
