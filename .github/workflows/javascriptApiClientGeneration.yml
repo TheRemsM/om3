@@ -35,7 +35,7 @@ jobs:
          git add .
          git status
          git commit -a -m "msg"
-         git push origin feature-branch
+         git push origin feature-branch --force
          echo "${{ secrets.ACCESS_TOKEN }}" > token.txt
          gh auth login --with-token < token.txt
          gh pr create \

@@ -83,7 +83,7 @@ paths:
       description: |
         Freeze all the cluster nodes.
 
-        Prevent all service monitors decisions, for example services takeover.
+        Prevent all servic e monitors decisions, for example services takeover.
 
         Nodes should be frozen before any maintenance operation on the system,
         the clusterware or the managed applications.
