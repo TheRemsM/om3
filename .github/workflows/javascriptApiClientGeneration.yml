@@ -36,7 +36,7 @@ jobs:
          date >> README.md
          git add README.md
          git add .
-         VERSION=$(cat package.json | jq '.version')"
+         VERSION="$(cat package.json | jq '.version')"
          if [ "$VERSION" = "$PVERSION" ] ; then
              echo no change $VERSION
              exit 0
