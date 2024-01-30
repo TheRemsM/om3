@@ -36,6 +36,7 @@ jobs:
            git add README.md
          git add .
           cat package.json
+          echo "VERSION.... DSCJDSJFDSJSFJI $(cat package.json | jq '.version')"
           cat package.json | jq 
          echo "=$(git status -s)="
          #if [ -z "$(git status -s)" ]; then
@@ -44,6 +45,7 @@ jobs:
          #fi
              git status
          git commit -m "msg"
+          npm version 
          git push origin feature-branch --force
          echo "${{ secrets.ACCESS_TOKEN }}" > token.txt
          gh auth login --with-token < token.txt
