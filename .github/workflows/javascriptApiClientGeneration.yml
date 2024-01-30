@@ -24,13 +24,20 @@ jobs:
             .git
           sparse-checkout-cone-mode: false
 
-      - run: | 
+      - run: |
+         git clone --bare https://remimendes:${{ secrets.ACCESS_TOKEN }}@github.com/testOpenApiGen.git testOpenApiGen
          cp -r javascript-client/* testOpenApiGen/
          cd testOpenApiGen
+         git config --global user.email "you@example.com"
+         git config --global user.name "Your Name"
          git checkout -b feature-branch
          git commit -a -m "msg"
          git push origin feature-branch
-         git config --global user.email "you@example.com"
-         git config --global user.name "Your Name"
-         gh pr create --title "some title" --body "some body" --head "feature-branch" --base main
+         echo "${{ secrets.ACCESS_TOKEN }}" > token.txt
+         gh auth login --with-token < token.txt
+         gh pr create \
+           --body "" \
+           --title "title" \
+           --head "feature-branch" \
+           --base "main"
 
