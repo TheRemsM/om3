@@ -26,7 +26,7 @@ jobs:
 
       - run: |
          git clone --no-checkout https://${{ secrets.ACCESS_TOKEN }}@github.com/remimendes/testOpenApiGen.git
-         mv javascript-client/.* javascript-client/*  testOpenApiGen/
+         mv javascript-client/.??* javascript-client/*  testOpenApiGen/
          cd testOpenApiGen
          PVERSION="$(git describe --tags --abbrev=0)"
          ls -a
