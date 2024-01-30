@@ -32,6 +32,7 @@ jobs:
          git config --global user.email "you@example.com"
          git config --global user.name "Your Name"
          git checkout -b feature-branch
+         git add .
          git status
          git commit -a -m "msg"
          git push origin feature-branch
