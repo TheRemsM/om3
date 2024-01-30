@@ -33,6 +33,9 @@ jobs:
          git config --global user.name "Your Name"
          git checkout -b feature-branch
          git add .
+         if [ -n $(git status -s) ]; then
+          exit 0
+         fi
          git status
          git commit -m "msg"
          git push origin feature-branch --force
