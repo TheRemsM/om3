@@ -86,7 +86,7 @@ paths:
         Prevent all servic e monitors decisions, for example services takeover.
 
         Nodes should be frozen before any maintenance operation on the system,
-        the cluster ware or the managed applications.
+        the clusterware or the managed applications.
       operationId: PostClusterActionFreeze
       responses:
         200:
