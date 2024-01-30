@@ -4,7 +4,7 @@ openapi: 3.0.0
 
 info:
   title: opensvc agent api
-  version: 3.12.4
+  version: 3.12.5
 
 paths:
   /auth/token:
