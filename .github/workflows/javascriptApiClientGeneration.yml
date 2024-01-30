@@ -1,9 +1,10 @@
 name: javascript API client generation using api.yaml
 
-on:
-  push:
-    paths:
-      - daemon/api/api.yaml
+#on:
+ # push:
+  #  paths:
+   #   - daemon/api/api.yaml
+on:  workflow_dispatch
 
 jobs:
   generate-javascript-client:
