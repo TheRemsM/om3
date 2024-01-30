@@ -26,15 +26,14 @@ jobs:
 
       - run: |
          git clone --no-checkout https://${{ secrets.ACCESS_TOKEN }}@github.com/remimendes/testOpenApiGen.git
-         cp -r javascript-client/* testOpenApiGen/
+         cp -a javascript-client/* testOpenApiGen/
          cd testOpenApiGen
          ls -a
          git config --global user.email "you@example.com"
          git config --global user.name "Your Name"
          git checkout -b feature-branch
-         git add --all
          git status
-         git commit -m "msg"
+         git commit -a -m "msg"
          git push origin feature-branch --force
          echo "${{ secrets.ACCESS_TOKEN }}" > token.txt
          gh auth login --with-token < token.txt
