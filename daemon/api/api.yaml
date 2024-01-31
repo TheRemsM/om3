@@ -437,7 +437,7 @@ paths:
         - basicAuth: []
         - bearerAuth: []
       requestBody:
-        description: set dae mon log level
+        description: set daemon log level
         required: true
         content:
           application/json:
