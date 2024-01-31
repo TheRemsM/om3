@@ -1343,7 +1343,7 @@ paths:
 
   /node/name/{nodename}/instance/path/{namespace}/{kind}/{name}/action/startstandby:
     post:
-      description: Start the object in stance in  standby mode.
+      description: Start the object in stance in   standby mode.
       operationId: PostInstanceActionStartStandby
       parameters:
         - $ref: '#/components/parameters/inPathNodeName'
