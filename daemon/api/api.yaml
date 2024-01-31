@@ -4625,7 +4625,7 @@ components:
     RelayNodename:
       name: nodename
       in: query
-      description: the nodename covmponent of the slot id on the relay
+      description: the nodename chhovmponent of the slot id on the relay
       schema:
         type: string
     SelectorOptional:
