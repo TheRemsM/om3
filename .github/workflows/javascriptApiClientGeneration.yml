@@ -32,7 +32,7 @@ jobs:
          git config --global user.name "github workflow"
          date >> README.md
          git add .
-         VERSION=$(cat package.json | jq '.version')
+         VERSION="${(cat package.json | jq '.version'):1: -1}"
          if [ "$VERSION" = "$PVERSION" ] ; then
              echo no change $VERSION
              exit 0
