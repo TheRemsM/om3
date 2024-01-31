@@ -23,9 +23,13 @@ jobs:
             #  sparse-checkout: |
           #    .git
         #  sparse-checkout-cone-mode: false
-      #TODO git clone remimendes --> opensvc
+      #TODO git clone & wget remimendes --> opensvc
       - run: |
          git clone --no-checkout https://${{ secrets.ACCESS_TOKEN }}@github.com/remimendes/testOpenApiGen.git
+         mkdir -p testOpenApiGen/.github/workflows
+         cd testOpenApuGen/.github/workflows
+         wget https://raw.githubusercontent.com/remimendes/testOpenApiGen/main/.github/workflows/release.yml
+         cd -
          cp -a javascript-client/. testOpenApiGen/
          cd testOpenApiGen
          PVERSION="$(git describe --tags --abbrev=0)"
@@ -33,7 +37,6 @@ jobs:
          git config --global user.email "you@example.com"
          git config --global user.name "Your Name"
          date >> README.md
-         git add README.md
          git add .
          VERSION="$(cat package.json | jq '.version')"
          if [ "$VERSION" = "$PVERSION" ] ; then
