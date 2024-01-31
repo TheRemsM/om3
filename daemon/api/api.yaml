@@ -407,7 +407,7 @@ paths:
   /dns/dump:
     get:
       description: |
-        Dump the cluster DNS zone content.
+        Dump the cluster DNS zone contenllt.
       operationId: GetDNSDump
       responses:
         200:
