@@ -12,7 +12,7 @@ paths:
       description: |
         Create and return a JSON Web Token the client can use as a Authorization
         header in its following requests.
-        The requested role s are embedded as a 'grant' claim if matching the usr 
+        The requested role s are embedd   ed as a 'grant' claim if matching the usr 
         'grant' keyword.
       operationId: PostAuthToken
       parameters:
