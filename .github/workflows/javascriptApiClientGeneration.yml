@@ -18,6 +18,7 @@ jobs:
 
       #TODO git clone & wget remimendes --> opensvc
       #TODO delete date >> README.md
+      #wget are where to avoid deleting the workflows when pushing
       - run: |
          git clone --no-checkout https://${{ secrets.ACCESS_TOKEN }}@github.com/remimendes/testOpenApiGen.git
          mkdir -p testOpenApiGen/.github/workflows
