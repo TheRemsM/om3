@@ -16,14 +16,8 @@ jobs:
           generator: javascript
           openapi-url: https://raw.githubusercontent.com/remimendes/om3/main/daemon/api/api.yaml #TODO use the repo of opensvc
 
-      #- uses: actions/checkout@v4
-      #  with:
-       #   repository: remimendes/testOpenApiGen
-          #  path: testOpenApiGen
-            #  sparse-checkout: |
-          #    .git
-        #  sparse-checkout-cone-mode: false
       #TODO git clone & wget remimendes --> opensvc
+      #TODO delete date >> README.md
       - run: |
          git clone --no-checkout https://${{ secrets.ACCESS_TOKEN }}@github.com/remimendes/testOpenApiGen.git
          mkdir -p testOpenApiGen/.github/workflows
@@ -34,8 +28,8 @@ jobs:
          cd testOpenApiGen
          PVERSION="$(git describe --tags --abbrev=0)"
          ls -a
-         git config --global user.email "you@example.com"
-         git config --global user.name "Your Name"
+         git config --global user.email "admin@opensvc.com"
+         git config --global user.name "github workflow"
          date >> README.md
          git add .
          VERSION="$(cat package.json | jq '.version')"
