@@ -26,14 +26,14 @@ jobs:
          cd -
          cp -a javascript-client/. testOpenApiGen/
          cd testOpenApiGen
-         PVERSION= $(git describe --tags --abbrev=0)
+         PVERSION="$(git describe --tags --abbrev=0)"
          ls -a
          git config --global user.email "admin@opensvc.com"
          git config --global user.name "github workflow"
          date >> README.md
          git add .
          VERSION="$(cat package.json | jq '.version')"
-         if [ "$VERSION" = $PVERSION ] ; then
+         if [ "$VERSION" = "$PVERSION" ] ; then
              echo no change $VERSION
              exit 0
          fi
@@ -44,6 +44,6 @@ jobs:
          fi
          git status
          git commit -m "create new version $VERSION"
-         git tag $VERSION
+         git tag "${VERSION:1: -1}"
          git push origin
          git push --tags

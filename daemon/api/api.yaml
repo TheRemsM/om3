@@ -437,7 +437,7 @@ paths:
         - basicAuth: []
         - bearerAuth: []
       requestBody:
-        description: set daeffmn log level
+        description: set daeffmn lo g level
         required: true
         content:
           application/json:
